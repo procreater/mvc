@@ -1,0 +1,21 @@
+﻿@model IEnumerable<WebApplication6.Student>
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Crate Student</h2>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name" value="" /></td>
+        </tr>
+        <tr>
+            <td>Note:</td>
+            <td><input type="text" name="note" value="" /></td>
+        </tr>
+    </table>
+    <p><input type="submit" value="Add" /></p>
+}

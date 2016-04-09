@@ -1,0 +1,21 @@
+﻿@model WebApplication6.Student
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Edit</h2>
+<h3>Student</h3>
+<hr />
+@using (Html.BeginForm())
+{
+     
+        string name = Model.Name;
+        var note = Model.Note;
+    
+    @Html.TextBox("name", name , new { @class = "form-control" })
+    @Html.TextBox("note", note, new { @class = "form-control" })
+    <input type="submit" value="Update" />
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WebApplication6.Student>
+@{
+    ViewBag.Title = "Öğrenciler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Students</h2>
+<table class="table">
+    <tr>
+        <td>Name</td>
+        <td>Note</td>
+        <td>Operation</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(model => item.Name)</td> <td>@Html.DisplayFor(model => item.Note)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
